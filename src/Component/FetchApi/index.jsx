@@ -15,16 +15,16 @@ function index(props) {
   const lastIndex = firstIndex - total;
   const dataSlice = data.slice(lastIndex, firstIndex)
 
-  function fetchi() {
+  const fetData = async () => {
     setLoader(false);
-    const request = fetch('https://jsonplaceholder.typicode.com/posts')
-    .then(res => res.json())
-    .then(req => setData(req));
+    const request = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const result = await request.json();
+    setData(result)
     setLoader(true);
   }
 
   useEffect(() => {
-    fetchi()
+    fetData()
   }, [])
 
   function click(num){

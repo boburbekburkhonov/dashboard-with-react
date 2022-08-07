@@ -6,6 +6,7 @@
   max-width: 251px;
   width: 100%;
   min-height: 100vh;
+  transition: all 0.4s;
 }
 
 .sitenav-line {
@@ -63,4 +64,20 @@
   background-repeat: no-repeat;
   position: relative;
   top: 5px;
+}
+
+.hamburger {
+  margin: 10px;
+  padding: 25px;
+  background: none;
+  border: transparent;
+  width: 30px;
+  height: 30px;
+  background-image: url(../../assets/images/bars-solid.svg);
+  background-repeat: no-repeat;
+}
+
+.close {
+  background-color: #FFFFFF;
+  cursor: pointer;
 }

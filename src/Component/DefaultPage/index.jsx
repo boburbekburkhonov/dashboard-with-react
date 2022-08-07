@@ -2,7 +2,7 @@ import React from 'react';
 
 function index(props) {
   return (
-    <div className='w-75 m-auto'>
+    <div className='w-75 mx-auto'>
       <h1 className='alert alert-danger text-center'>
         Choose Page...
       </h1>

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Navbar from './Component/Navbar';
 import FetchApi from './Component/FetchApi'
 import Todo from './Component/Todo';
@@ -10,10 +10,14 @@ import dataContext from './Component/Context/dataContext';
 function App() {
 
   const[values, setValue] = useState([]);
+  const all = useRef()
+  const allValue = all.current;
 
+
+  console.log();
   return (
-    <div className="App d-flex flex-wrap">
-      <dataContext.Provider value = {{values, setValue}}>
+    <dataContext.Provider value = {{values, setValue, allValue}}>
+        <div ref={all} className="App d-flex flex-wrap">
         <BrowserRouter>
           <Navbar />
 
@@ -24,8 +28,9 @@ function App() {
             <Route path='todolist' element={<TodoList data={values} />} />
           </Routes>
         </BrowserRouter>
+      </div>
       </dataContext.Provider>
-    </div>
+
   )
 }
 
